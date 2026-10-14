@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Password Recovery</title>
+    <!-- 1. Load EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script>
+      (function() {
+        // Initialize EmailJS with your Public Key
+        emailjs.init("fPSIqNunpk0Qg42ps");
+      })();
+    </script>
+  </head>
+  <body>
+    <h1>Password Recovery</h1>
+    <p>Enter your username and recovery email to receive a verification code.</p>
+
+    <label for="rcvr_usrnm">Username</label><br>
+    <input type="text" id="rcvr_usrnm" placeholder="Enter username..."><br><br>
+
+    <label for="rcvr_email">Recovery Email</label><br>
+    <input type="email" id="rcvr_email" placeholder="Enter email..."><br><br>
+
+    <!-- Button triggers the JavaScript email process -->
+    <button type="button" id="send_code_btn">Send Code</button><br><br>
+
+    <button type="button" onclick="location.href='index.html'">Cancel</button>
+
+    <!-- 2. Load script.js at the bottom -->
+    <script src="script.js"></script>
+  </body>
+</html>

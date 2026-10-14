@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="styles_journal.css">
+    <title>My Journal - Dashboard</title>
+  </head>
+  <body>
+    <h1>Journal</h1>
+
+    <label for="entry-date">Date</label>
+    <br>
+    <input type="date" id="entry-date">
+    <br><br>
+
+    <label for="entry-subject">Subject/Title</label>
+    <br>
+    <input type="text" id="entry-subject" placeholder="Title...">
+    <br><br>
+
+    <label for="entry-input">Journal Entry</label>
+    <br>
+    <textarea placeholder="Type here..." id="entry-input"></textarea>
+    <br><br>
+
+    <button id="entry-btn">Save</button>
+    <a href="index.html"><button type="button">Home</button></a> 
+
+    <h2>Past Entries</h2>
+    <div id="entries-container"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

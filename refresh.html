@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Storage Reset Utility</title>
+    <style>
+      body { font-family: sans-serif; padding: 20px; line-height: 1.6; }
+      button { padding: 10px 15px; font-size: 16px; margin-right: 10px; cursor: pointer; }
+      pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+    </style>
+  </head>
+  <body>
+    <h1>LocalStorage Debug & Reset Tool</h1>
+    
+    <button type="button" onclick="clearStorage()">Wipe All Storage Now</button>
+    <button type="button" onclick="checkStorage()">Check Current Storage</button>
+
+    <h3>Current LocalStorage Contents:</h3>
+    <pre id="output">Click "Check Current Storage" to inspect...</pre>
+
+    <script>
+      function clearStorage() {
+        localStorage.clear();
+        document.getElementById("output").textContent = "SUCCESS: All localStorage has been completely cleared!";
+        alert("Storage completely cleared!");
+      }
+
+      function checkStorage() {
+        const data = {};
+        for (let i = 0; i < localStorage.length; i++) {
+          const key = localStorage.key(i);
+          data[key] = JSON.parse(localStorage.getItem(key));
+        }
+        document.getElementById("output").textContent = JSON.stringify(data, null, 2);
+      }
+
+      // Check on load automatically
+      checkStorage();
+    </script>
+  </body>
+</html>
